@@ -1,0 +1,67 @@
+<div class="container d-flex justify-content-center align-items-center vh-100">
+
+  <div class="card shadow-lg p-4" style="width:450px; border-radius:20px;">
+
+    <h2 class="text-center text-primary mb-4">Create Account</h2>
+
+    <div class="mb-3">
+      <label class="form-label">Full Name</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter Full Name"
+        [(ngModel)]="user.fullName">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Email</label>
+      <input
+        type="email"
+        class="form-control"
+        placeholder="Enter Email"
+        [(ngModel)]="user.email">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Mobile Number</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter Mobile Number"
+        [(ngModel)]="user.mobile">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        placeholder="Enter Password"
+        [(ngModel)]="user.password">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Role</label>
+      <select
+        class="form-select"
+        [(ngModel)]="user.role">
+        <option value="">Select Role</option>
+        <option value="ADMIN">ADMIN</option>
+        <option value="USER">USER</option>
+      </select>
+    </div>
+
+    <button
+      class="btn btn-success w-100"
+      (click)="register()">
+      Register
+    </button>
+
+    <div class="text-center mt-3">
+      Already have an account?
+      <a routerLink="/login">Login</a>
+    </div>
+
+  </div>
+
+</div>

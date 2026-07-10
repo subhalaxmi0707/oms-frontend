@@ -1,0 +1,39 @@
+<div class="container-fluid vh-100 bg-primary d-flex justify-content-center align-items-center">
+
+  <div class="card shadow-lg p-4" style="width:420px; border-radius:20px;">
+
+    <h2 class="text-center text-primary mb-4">
+      OMS Login
+    </h2>
+
+    <div class="mb-3">
+      <label>Email</label>
+      <input
+        type="email"
+        class="form-control"
+        [(ngModel)]="email"
+        placeholder="Enter Email">
+    </div>
+
+    <div class="mb-3">
+      <label>Password</label>
+      <input
+        type="password"
+        class="form-control"
+        [(ngModel)]="password"
+        placeholder="Enter Password">
+    </div>
+
+    <button class="btn btn-primary w-100"
+      (click)="login()">
+      Login
+    </button>
+
+    <p class="text-center mt-3">
+      Don't have an account?
+      <a routerLink="/register">Register</a>
+    </p>
+
+  </div>
+
+</div>

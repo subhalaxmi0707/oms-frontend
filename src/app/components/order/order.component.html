@@ -1,0 +1,212 @@
+<div class="container mt-4">
+
+<div class="card shadow-lg">
+
+<div class="card-header bg-primary text-white">
+
+<h3>📦 Order Management</h3>
+
+</div>
+
+<div class="card-body">
+
+<div class="row">
+
+<div class="col-md-6 mb-3">
+
+<label>Customer Name</label>
+
+<input
+type="text"
+class="form-control"
+[(ngModel)]="order.customerName">
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label>Email</label>
+
+<input
+type="email"
+class="form-control"
+[(ngModel)]="order.customerEmail">
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label>Mobile</label>
+
+<input
+type="text"
+class="form-control"
+[(ngModel)]="order.customerMobile">
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label>Product Name</label>
+
+<input
+type="text"
+class="form-control"
+[(ngModel)]="order.productName">
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label>Quantity</label>
+
+<input
+type="number"
+class="form-control"
+[(ngModel)]="order.quantity">
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label>Total Price</label>
+
+<input
+type="number"
+class="form-control"
+[(ngModel)]="order.totalPrice">
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label>Status</label>
+
+<select
+class="form-control"
+[(ngModel)]="order.orderStatus">
+
+<option>Pending</option>
+<option>Confirmed</option>
+<option>Packed</option>
+<option>Out For Delivery</option>
+<option>Delivered</option>
+<option>Cancelled</option>
+
+</select>
+
+</div>
+
+<div class="col-md-12 mb-3">
+
+<button
+*ngIf="!editMode"
+class="btn btn-success me-2"
+(click)="saveOrder()">
+
+➕ Place Order
+
+</button>
+
+<button
+*ngIf="editMode"
+class="btn btn-warning me-2"
+(click)="updateOrder()">
+
+✏ Update Order
+
+</button>
+
+<button
+class="btn btn-secondary"
+(click)="resetForm()">
+
+🔄 Reset
+
+</button>
+
+</div>
+
+</div>
+
+<hr>
+
+<table class="table table-bordered table-hover">
+
+<thead class="table-primary">
+
+<tr>
+
+<th>ID</th>
+<th>Customer</th>
+<th>Product</th>
+<th>Qty</th>
+<th>Total</th>
+<th>Status</th>
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr *ngFor="let o of orders">
+
+<td>{{o.id}}</td>
+<td>{{o.customerName}}</td>
+<td>{{o.productName}}</td>
+<td>{{o.quantity}}</td>
+<td>₹ {{o.totalPrice}}</td>
+<td>{{o.orderStatus}}</td>
+
+<td>
+
+<button
+class="btn btn-warning btn-sm me-2"
+(click)="editOrder(o)">
+
+Edit
+
+</button>
+
+<button
+class="btn btn-danger btn-sm"
+(click)="deleteOrder(o.id)">
+
+Delete
+
+</button>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+<div class="d-flex justify-content-between align-items-center mt-3">
+
+    <h5 class="text-primary mb-0">
+        Total Orders :
+        <span class="badge bg-primary">
+            {{orders.length}}
+        </span>
+    </h5>
+
+    <button
+        class="btn btn-primary"
+        (click)="ngOnInit()">
+
+        🔄 Refresh
+
+    </button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>

@@ -1,0 +1,16 @@
+.card{
+    background:white;
+}
+
+input{
+    border-radius:10px;
+}
+
+button{
+    border-radius:10px;
+    font-weight:bold;
+}
+
+h2{
+    font-weight:bold;
+}
