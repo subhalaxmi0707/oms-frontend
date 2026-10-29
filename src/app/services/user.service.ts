@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class UserService {
 
-  private apiUrl = 'http://localhost:8080/api/users';
+  private apiUrl = 'https://oms-backend-pr2l.onrender.com/api/users';
 
   constructor(private http: HttpClient) { }
 
